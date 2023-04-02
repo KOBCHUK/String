@@ -4,15 +4,14 @@ try:
     replace_word = input("Enter the replace world: ")
 
     words = row.split()
-    new_text = ""
 
-    for word in words:
-        if word == search_word:
-         new_text += replace_word + " "
-        else:
-         new_text += word + " "
+    for i in range(len(words)):
+        if words[i] == search_word:
+            words[i] = replace_word
 
-    print("Received row: ", new_text.strip())
+    new_row = ' '.join(words)
+         
+    print("Received row: ", new_row)
 except Exception as ex:
     print(ex)
 finally:
